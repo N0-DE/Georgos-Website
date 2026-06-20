@@ -181,7 +181,7 @@
 /* Hero Logo Emboss */
 .hero-logo-emboss {
   width: 480px;
-  height: 480px;
+  height: auto;
   max-width: 90vw;
   object-fit: contain;
   margin: 0.5rem auto 0 auto;
@@ -201,6 +201,7 @@
 .hero-title {
   font-size: clamp(3rem, 5.5vw, 5rem);
   font-weight: 800;
+  margin-top: 0;
   margin-bottom: 0.5rem;
   line-height: 1.05;
   letter-spacing: -1.5px;
