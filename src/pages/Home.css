@@ -64,7 +64,7 @@
    HERO SECTION
    —————————————————————————————————————————————— */
 .hero {
-  height: 100vh;
+  height: 100svh;
   min-height: 700px;
   position: relative;
   display: flex;
@@ -753,7 +753,10 @@
 
 @media (max-width: 576px) {
   .hero {
-    min-height: 100vh;
+    height: auto;
+    min-height: 100svh;
+    padding-top: 120px;
+    padding-bottom: 3rem;
   }
 
   .hero-buttons {
