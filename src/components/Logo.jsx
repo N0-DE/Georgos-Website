@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 
+import logoImg from '../assets/georgos-logo.jpg';
+
 const Logo = () => {
   return (
     <Link to="/" className="logo-container" style={{ 
@@ -8,23 +10,14 @@ const Logo = () => {
       gap: '0.75rem',
       textDecoration: 'none'
     }}>
-      <div style={{
+      <img src={logoImg} alt="Georgos Logo" style={{
         width: '44px',
         height: '44px',
-        background: 'linear-gradient(135deg, var(--primary-red), #d4050f)',
-        borderRadius: '12px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        color: 'white',
-        fontWeight: '800',
-        fontSize: '1.4rem',
-        boxShadow: '0 4px 12px rgba(227, 6, 19, 0.3)',
+        borderRadius: '8px',
+        objectFit: 'contain',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
         transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-        letterSpacing: '-0.5px',
-      }}>
-        G
-      </div>
+      }} />
       <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1' }}>
         <span style={{
           fontSize: '1.5rem',

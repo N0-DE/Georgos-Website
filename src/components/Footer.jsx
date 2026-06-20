@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
+import logoImg from '../assets/georgos-logo.jpg';
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -10,20 +12,12 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="footer-brand">
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-              <div style={{
+              <img src={logoImg} alt="Georgos Logo" style={{
                 width: '40px',
                 height: '40px',
-                backgroundColor: 'var(--primary-red)',
-                borderRadius: '8px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'white',
-                fontWeight: 'bold',
-                fontSize: '1.2rem'
-              }}>
-                G
-              </div>
+                borderRadius: '6px',
+                objectFit: 'contain'
+              }} />
               <span style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--white)' }}>
                 Georgos
               </span>
