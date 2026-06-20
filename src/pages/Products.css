@@ -1,0 +1,378 @@
+/* ============================================================
+   PRODUCTS PAGE — Premium Georgos Styling
+   Brand: #E30613 (Red) · #1C1917 (Charcoal) · #FFD700 (Yellow)
+   Font: Outfit
+   ============================================================ */
+
+/* ---------- HERO HEADER ---------- */
+.products-header {
+  position: relative;
+  background: linear-gradient(135deg, #1C1917 0%, #292524 40%, #1C1917 70%, #0F0E0D 100%);
+  color: #fff;
+  padding: 11rem 0 5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Decorative radial glow behind heading */
+.products-header::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(227, 6, 19, 0.12) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Animated gradient underline beneath the heading */
+.products-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #E30613, #FFD700, #E30613, transparent);
+  background-size: 200% 100%;
+  animation: shimmer-line 4s ease-in-out infinite;
+}
+
+@keyframes shimmer-line {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Floating dot particles */
+.products-header .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- NOTICE / INFO BANNER — Glassmorphism ---------- */
+.notice-banner {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 215, 0, 0.06)
+  );
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-left: 4px solid #FFD700;
+  padding: 1.75rem 2rem;
+  border-radius: 0 1rem 1rem 0;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: transform 0.35s cubic-bezier(.4, 0, .2, 1),
+              box-shadow 0.35s cubic-bezier(.4, 0, .2, 1);
+  overflow: hidden;
+}
+
+.notice-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.notice-banner:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- FILTER PILLS ---------- */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+  padding: 0 1rem;
+}
+
+.filter-btn {
+  position: relative;
+  padding: 0.625rem 1.75rem;
+  border-radius: 50px;
+  border: 1.5px solid rgba(28, 25, 23, 0.15);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #1C1917;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  overflow: hidden;
+  transition:
+    all 0.4s cubic-bezier(.4, 0, .2, 1),
+    box-shadow 0.3s ease;
+  z-index: 0;
+}
+
+/* Gradient sweep on hover */
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #E30613, #c4050f);
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(.4, 0, .2, 1);
+  z-index: -1;
+}
+
+.filter-btn:hover {
+  color: #fff;
+  border-color: #E30613;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(227, 6, 19, 0.2);
+}
+
+.filter-btn:hover::before {
+  opacity: 1;
+}
+
+/* Active state — red gradient indicator */
+.filter-btn.active {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(135deg, #E30613 0%, #b8040e 50%, #1C1917 100%);
+  box-shadow:
+    0 4px 16px rgba(227, 6, 19, 0.35),
+    0 0 0 3px rgba(227, 6, 19, 0.1);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.filter-btn.active::before {
+  opacity: 0;
+}
+
+/* Active badge glow pulse */
+.filter-btn.active::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgba(227, 6, 19, 0.4), rgba(28, 25, 23, 0.3));
+  z-index: -2;
+  animation: pill-glow 2s ease-in-out infinite;
+}
+
+@keyframes pill-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%      { opacity: 0.2; transform: scale(1.06); }
+}
+
+/* ---------- MASONRY GRID ---------- */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.75rem;
+  grid-auto-rows: auto;
+}
+
+/* ---------- PRODUCT CARD ---------- */
+.product-card {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  height: 320px;
+  cursor: pointer;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 1px 4px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.5s cubic-bezier(.4, 0, .2, 1),
+    box-shadow 0.5s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* Varying heights for masonry feel */
+.product-card:nth-child(even) {
+  height: 420px;
+}
+
+.product-card:nth-child(3n) {
+  height: 360px;
+}
+
+.product-card:nth-child(5n) {
+  height: 380px;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.18),
+    0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- PRODUCT IMAGE ---------- */
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(.4, 0, .2, 1);
+  will-change: transform;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.12);
+}
+
+/* ---------- GRADIENT OVERLAY (always visible + intensifies on hover) ---------- */
+.product-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem 2rem 2rem;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: #fff;
+  transform: translateY(15px);
+  opacity: 0;
+  transition:
+    transform 0.45s cubic-bezier(.4, 0, .2, 1),
+    opacity 0.45s cubic-bezier(.4, 0, .2, 1);
+  z-index: 2;
+}
+
+.product-card:hover .product-overlay {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Subtle top-overlay gradient that's always visible */
+.product-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(28, 25, 23, 0.05) 0%,
+    transparent 30%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.35) 100%
+  );
+  z-index: 1;
+  transition: background 0.5s ease;
+  pointer-events: none;
+}
+
+.product-card:hover::before {
+  background: linear-gradient(
+    180deg,
+    rgba(227, 6, 19, 0.08) 0%,
+    transparent 30%,
+    transparent 50%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+/* ---------- CATEGORY BADGE ---------- */
+.product-category {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #1C1917;
+  background: linear-gradient(135deg, #FFD700, #ffc107);
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+  margin-bottom: 0.65rem;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
+
+/* ---------- PRODUCT TITLE ---------- */
+.product-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .masonry-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-header {
+    padding: 9rem 0 3.5rem;
+  }
+
+  .masonry-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .product-card,
+  .product-card:nth-child(even),
+  .product-card:nth-child(3n),
+  .product-card:nth-child(5n) {
+    height: 280px;
+  }
+
+  /* Always show overlay on touch devices */
+  .product-overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .filter-container {
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  .notice-banner {
+    flex-direction: column;
+    padding: 1.25rem;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card,
+  .product-card:nth-child(even),
+  .product-card:nth-child(3n),
+  .product-card:nth-child(5n) {
+    height: 260px;
+  }
+}

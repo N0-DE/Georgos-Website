@@ -1,0 +1,252 @@
+/* ============================================================
+   GEORGOS — PREMIUM FOOTER
+   ============================================================ */
+
+/* ===== FOOTER BASE — RICH DARK GRADIENT ===== */
+.footer {
+  background: linear-gradient(
+    160deg,
+    #1C1917 0%,
+    #171412 25%,
+    #141110 50%,
+    #0F0E0D 80%,
+    #0A0908 100%
+  );
+  color: var(--white);
+  padding: 6rem 0 0;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle radial glow */
+.footer::before {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(227, 6, 19, 0.06) 0%, transparent 70%);
+  top: -200px;
+  right: -150px;
+  pointer-events: none;
+}
+
+/* Subtle grid texture */
+.footer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+}
+
+.footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== 4-COLUMN CONTENT GRID ===== */
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3.5rem;
+  margin-bottom: 4rem;
+}
+
+/* ===== BRAND COLUMN ===== */
+.footer-brand {
+  max-width: 380px;
+}
+
+.footer-brand p {
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 1.5rem;
+  line-height: 1.85;
+  font-size: 0.95rem;
+}
+
+/* ===== GOLDEN ACCENT HEADINGS ===== */
+.footer-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.75rem;
+  color: var(--accent-yellow);
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Golden underline accent */
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-yellow), rgba(255, 215, 0, 0.3));
+  border-radius: 2px;
+}
+
+/* ===== FOOTER LINKS ===== */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  font-weight: 400;
+  padding: 0.3rem 0;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition:
+    color 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    padding-left 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Slide-right arrow on hover */
+.footer-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--accent-yellow), transparent);
+  border-radius: 1px;
+  bottom: 4px;
+  transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.footer-link:hover {
+  color: var(--white);
+  padding-left: 8px;
+}
+
+.footer-link:hover::before {
+  width: 100%;
+}
+
+/* ===== SOCIAL MEDIA PLACEHOLDER ===== */
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.footer-social a,
+.footer-social span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.footer-social a:hover,
+.footer-social span:hover {
+  background: rgba(227, 6, 19, 0.15);
+  border-color: rgba(227, 6, 19, 0.4);
+  color: var(--white);
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(227, 6, 19, 0.2);
+}
+
+/* ===== PREMIUM BOTTOM BAR ===== */
+.footer-bottom {
+  position: relative;
+  padding: 2rem 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.875rem;
+  letter-spacing: 0.3px;
+}
+
+/* Gradient line separator */
+.footer-bottom::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(227, 6, 19, 0.3) 20%,
+    rgba(255, 215, 0, 0.4) 50%,
+    rgba(28, 25, 23, 0.3) 80%,
+    transparent 100%
+  );
+}
+
+.footer-bottom p {
+  transition: color 0.3s ease;
+}
+
+.footer-bottom:hover p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ===== RESPONSIVE — TABLET (2-Column) ===== */
+@media (max-width: 992px) {
+  .footer {
+    padding: 5rem 0 0;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+    grid-column: 1 / -1;
+  }
+}
+
+/* ===== RESPONSIVE — MOBILE (1-Column) ===== */
+@media (max-width: 576px) {
+  .footer {
+    padding: 4rem 0 0;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-bottom {
+    padding: 1.5rem 0;
+    font-size: 0.8rem;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}

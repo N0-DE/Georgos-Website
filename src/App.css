@@ -1,0 +1,19 @@
+/* App Layout */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Active nav link indicator */
+.nav-link.active {
+  color: var(--primary-red);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
