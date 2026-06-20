@@ -64,8 +64,7 @@
    HERO SECTION
    —————————————————————————————————————————————— */
 .hero {
-  height: 100svh;
-  min-height: 700px;
+  min-height: 100svh;
   position: relative;
   display: flex;
   align-items: center;
@@ -73,7 +72,8 @@
   overflow: hidden;
   background-color: #0F0E0D;
   color: var(--white);
-  padding-top: 80px;
+  padding-top: 120px;
+  padding-bottom: 60px;
 }
 
 /* Premium gradient overlay */

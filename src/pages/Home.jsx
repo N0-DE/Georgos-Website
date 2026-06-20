@@ -27,14 +27,6 @@ const Home = () => {
       <section className="hero">
         <div className="hero-bg" />
         <div className="container hero-content">
-          <motion.h1 
-            className="hero-title"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
-          >
-            Serving Pala Since 1963
-          </motion.h1>
           <motion.img
             src={logoImg}
             alt="Georgos Logo"
@@ -43,6 +35,14 @@ const Home = () => {
             animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
           />
+          <motion.h1 
+            className="hero-title"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          >
+            Serving Pala Since 1963
+          </motion.h1>
           <motion.p 
             className="hero-subtitle"
             initial={{ opacity: 0, y: 30 }}
