@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, XCircle, ShieldCheck, Heart, Store, ThumbsUp, Users, Award, MapPin } from 'lucide-react';
 import AnimatedCounter from '../components/AnimatedCounter';
+import logoImg from '../assets/georgos-logo.png';
 import './Home.css';
 
 const Home = () => {
@@ -26,11 +27,19 @@ const Home = () => {
       <section className="hero">
         <div className="hero-bg" />
         <div className="container hero-content">
+          <motion.img
+            src={logoImg}
+            alt="Georgos Logo"
+            className="hero-logo-emboss"
+            initial={{ opacity: 0, scale: 0.8, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          />
           <motion.h1 
             className="hero-title"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
           >
             Serving Pala Since 1963
           </motion.h1>
