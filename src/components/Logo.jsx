@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import logoImg from '../assets/georgos-logo.jpg';
+import logoImg from '../assets/georgos-logo.png';
 
 const Logo = () => {
   return (
@@ -22,6 +22,7 @@ const Logo = () => {
         <span style={{
           fontSize: '1.5rem',
           fontWeight: '800',
+          fontFamily: '"Conthrax", "Conthrax Sb", sans-serif',
           color: 'var(--deep-charcoal)',
           letterSpacing: '-0.5px',
           lineHeight: '1.2'

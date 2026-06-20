@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
-import logoImg from '../assets/georgos-logo.jpg';
+import logoImg from '../assets/georgos-logo.png';
 
 const Footer = () => {
   return (
@@ -18,7 +18,7 @@ const Footer = () => {
                 borderRadius: '6px',
                 objectFit: 'contain'
               }} />
-              <span style={{ fontSize: '1.5rem', fontWeight: '700', color: 'var(--white)' }}>
+              <span style={{ fontSize: '1.5rem', fontWeight: '700', fontFamily: '"Conthrax", "Conthrax Sb", sans-serif', color: 'var(--white)' }}>
                 Georgos
               </span>
             </div>
