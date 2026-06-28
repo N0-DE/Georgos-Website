@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, XCircle, ShieldCheck, Heart, Store, ThumbsUp, Users, Award, MapPin } from 'lucide-react';
-import logoImg from '../assets/georgos-logo1.png';
+import logoImg from '../assets/wide-logo.png';
 import bgImg from '../assets/pala-church-bg.jpg';
 import shopImg from '../assets/super-shop.jpg';
 import marketImg from '../assets/super-market.jpg';
