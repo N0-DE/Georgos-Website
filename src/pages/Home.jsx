@@ -70,7 +70,12 @@ const Home = () => {
               Our Story
             </Link>
           </motion.div>
+        </div>
+      </section>
 
+      {/* Stats Section (Moved out of hero to prevent overlapping the sketch) */}
+      <section className="section" style={{ backgroundColor: 'var(--vintage-light, #FDFBF7)', paddingTop: '2rem', paddingBottom: '4rem' }}>
+        <div className="container">
           <motion.div 
             className="stats-container"
             initial={{ opacity: 0, scale: 0.9 }}
