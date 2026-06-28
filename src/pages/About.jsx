@@ -1,36 +1,18 @@
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Target, Eye, Shield, Heart, Store, Users, TrendingUp } from 'lucide-react';
+import { Shield, Heart, Store, Users, TrendingUp } from 'lucide-react';
+import WindingJourney from '../components/WindingJourney';
 import './About.css';
 
 const About = () => {
-  const timeline = [
-    {
-      year: '1963',
-      title: 'Humble Beginnings',
-      desc: 'George M V started a small bicycle rental shop in Pala.'
-    },
-    {
-      year: 'Early Years',
-      title: 'Expanding Horizons',
-      desc: 'The business gradually expanded into grocery trading.'
-    },
-    {
-      year: 'Growth Phase',
-      title: 'Building Trust',
-      desc: 'Customer trust and dedication enabled steady growth.'
-    },
-    {
-      year: 'Expansion',
-      title: 'Becoming a Destination',
-      desc: 'The business evolved into a respected wholesale and retail operation.'
-    },
-    {
-      year: 'Present Day',
-      title: 'Serving Generations',
-      desc: 'Georgos now operates two successful stores and continues to serve generations of customers across Pala.'
-    }
-  ];
+  const timelineRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start center", "end center"]
+  });
+
+  const bikeY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   const values = [
     { icon: <Shield size={24} />, name: 'Trust' },
@@ -69,31 +51,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="section timeline-section">
-        <div className="container">
-          <h2 className="section-title">The Journey</h2>
-          <div className="timeline">
-            {timeline.map((item, index) => (
-              <motion.div 
-                key={index} 
-                className="timeline-item"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <div className="timeline-dot" />
-                <div className="timeline-content hover-lift">
-                  <div className="timeline-year">{item.year}</div>
-                  <h3 className="timeline-title">{item.title}</h3>
-                  <p style={{ color: 'var(--text-light)' }}>{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Winding Heritage Map Timeline */}
+      <WindingJourney />
 
       {/* Profiles */}
       <section className="section profile-section">
@@ -162,7 +121,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Target className="mv-icon" />
+              <Shield className="mv-icon" />
               <h3>Our Mission</h3>
               <p>To provide quality products, fair pricing, and dependable service while maintaining the trust built through generations.</p>
             </motion.div>
@@ -173,7 +132,7 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Eye className="mv-icon" />
+              <Store className="mv-icon" />
               <h3>Our Vision</h3>
               <p>To remain one of Pala's most trusted retail and wholesale destinations while embracing future opportunities and innovation.</p>
             </motion.div>

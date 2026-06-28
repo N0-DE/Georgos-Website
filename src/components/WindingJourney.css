@@ -1,0 +1,212 @@
+.winding-journey-section {
+  background-color: #FDFBF7; /* Off-white parchment tone */
+  padding: 6rem 0 10rem;
+  position: relative;
+  overflow: hidden;
+  --vintage-brown: #4E342E;
+  --vintage-light: #FDFBF7;
+}
+
+.landmark-sketch {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 400px;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.journey-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 2800px; /* Exact height to map the SVG path */
+}
+
+/* SVG Map Overlay */
+.journey-svg-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.journey-path-bg {
+  stroke: rgba(78, 52, 46, 0.1);
+  stroke-width: 4px;
+  stroke-dasharray: 10 10;
+  fill: none;
+}
+
+.journey-path-drawn {
+  stroke: var(--vintage-brown);
+  stroke-width: 4px;
+  stroke-linecap: round;
+  fill: none;
+}
+
+/* Moving Bicycle */
+.journey-bicycle-tracker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  offset-path: path('M 500 0 C 800 100, 800 300, 500 400 C 200 500, 200 700, 500 800 C 800 900, 800 1100, 500 1200 C 200 1300, 200 1500, 500 1600 C 800 1700, 800 1900, 500 2000 C 200 2100, 200 2300, 500 2400 C 800 2500, 800 2700, 500 2800');
+  offset-rotate: 0deg; /* Keep upright */
+  z-index: 5;
+}
+
+.bicycle-wrapper {
+  background: var(--vintage-light);
+  border: 3px solid var(--vintage-brown);
+  border-radius: 50%;
+  padding: 12px;
+  color: var(--vintage-brown);
+  box-shadow: 0 8px 24px rgba(78, 52, 46, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Shift slightly so it centers perfectly on the line */
+  transform: translate(-50%, -50%);
+}
+
+.bike-icon-spin {
+  display: flex;
+}
+
+/* Milestone Cards */
+.milestone-row {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+}
+
+.milestone-row.left {
+  justify-content: flex-start;
+  padding-left: 5%;
+}
+
+.milestone-row.right {
+  justify-content: flex-end;
+  padding-right: 5%;
+}
+
+.milestone-card {
+  width: 400px;
+  background: var(--vintage-light);
+  border: 1px solid rgba(78, 52, 46, 0.1);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 
+    0 10px 30px rgba(78, 52, 46, 0.05),
+    0 2px 8px rgba(78, 52, 46, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  /* A slight translation to align with the curves visually */
+  transform: translateY(-50%);
+}
+
+.milestone-row.left .milestone-card {
+  margin-right: 450px;
+}
+
+.milestone-row.right .milestone-card {
+  margin-left: 450px;
+}
+
+.milestone-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: rgba(78, 52, 46, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--vintage-brown);
+  border: 1px dashed rgba(78, 52, 46, 0.3);
+}
+
+.milestone-year {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #8D6E63;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.milestone-title {
+  font-size: 1.75rem;
+  color: var(--vintage-brown);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.milestone-desc {
+  color: #6D4C41;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Mobile Fallback: Make it a straight line to keep it readable */
+@media (max-width: 1024px) {
+  .journey-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0 1.5rem;
+  }
+  
+  .journey-svg-wrapper {
+    display: none; /* Hide the complex winding SVG */
+  }
+
+  /* Simple vertical line for mobile */
+  .journey-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2.5rem;
+    width: 3px;
+    background: rgba(78, 52, 46, 0.15);
+    z-index: 1;
+  }
+
+  .journey-bicycle-tracker {
+    display: none; /* Hide tracking bicycle on mobile for simplicity, or we could re-implement it vertically */
+  }
+
+  .milestone-row {
+    position: relative;
+    top: auto !important;
+    padding: 0 !important;
+  }
+
+  .milestone-card {
+    width: 100%;
+    transform: none;
+    margin: 0 !important;
+    margin-left: 4rem !important; /* Push past the vertical line */
+  }
+
+  .milestone-card::before {
+    content: '';
+    position: absolute;
+    left: -3rem;
+    top: 3rem;
+    width: 16px;
+    height: 16px;
+    background: var(--vintage-brown);
+    border-radius: 50%;
+  }
+}

@@ -131,8 +131,9 @@
    TIMELINE — ELEGANT VERTICAL LINE + GLOWING DOTS
    —————————————————————————————————————————————— */
 .timeline-section {
-  background-color: var(--bg-color);
+  background-color: var(--vintage-light, #FDFBF7);
   position: relative;
+  --vintage-brown: #5D4037;
 }
 
 .timeline {
@@ -142,25 +143,51 @@
   padding: 3rem 0;
 }
 
-/* Elegant vertical line with gradient — red to gold */
-.timeline::before {
-  content: '';
+/* SVG Timeline drawing and bicycle tracker */
+.timeline-path-container {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 3px;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(227, 6, 19, 0.15) 5%,
-    rgba(227, 6, 19, 0.3) 20%,
-    rgba(255, 215, 0, 0.3) 80%,
-    rgba(255, 215, 0, 0.15) 95%,
-    transparent 100%
-  );
+  width: 10px;
   transform: translateX(-50%);
-  border-radius: 3px;
+  z-index: 1;
+}
+
+.timeline-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.timeline-line-bg {
+  stroke: rgba(93, 64, 55, 0.15); /* light brown */
+  stroke-width: 2px;
+}
+
+.timeline-line-drawn {
+  stroke: var(--vintage-brown);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.timeline-bicycle {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  color: var(--vintage-brown);
+}
+
+.bike-icon-wrapper {
+  background: var(--vintage-light, #FDFBF7);
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(93, 64, 55, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--vintage-brown);
 }
 
 .timeline-item {
@@ -232,25 +259,11 @@
   top: 2rem;
   width: 18px;
   height: 18px;
-  background: linear-gradient(135deg, #E30613, #ff4757);
+  background: var(--vintage-brown);
   border-radius: 50%;
   z-index: 2;
-  animation: timelineGlow 3s ease-in-out infinite;
-}
-
-.timeline-item:nth-child(2) .timeline-dot { animation-delay: 0.6s; }
-.timeline-item:nth-child(3) .timeline-dot { animation-delay: 1.2s; }
-.timeline-item:nth-child(4) .timeline-dot { animation-delay: 1.8s; }
-.timeline-item:nth-child(5) .timeline-dot { animation-delay: 2.4s; }
-
-/* Pulse ring effect behind dot */
-.timeline-dot::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 50%;
-  border: 2px solid rgba(227, 6, 19, 0.4);
-  animation: pulseRing 2.5s ease-out infinite;
+  box-shadow: 0 0 0 4px rgba(93, 64, 55, 0.1);
+  transition: all 0.5s ease;
 }
 
 .timeline-item:nth-child(even) .timeline-dot {
@@ -261,7 +274,7 @@
 .timeline-year {
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--primary-red);
+  color: var(--vintage-brown);
   margin-bottom: 0.4rem;
   letter-spacing: -0.5px;
 }
@@ -630,7 +643,11 @@
   }
 
   /* Timeline: collapse to single column */
-  .timeline::before {
+  .timeline-path-container {
+    left: 2rem;
+  }
+  
+  .timeline-bicycle {
     left: 2rem;
   }
 
