@@ -84,7 +84,8 @@
   height: 100%;
   z-index: 1;
   background: url('../assets/pala-church-bg.jpg');
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center right;
   background-attachment: scroll;
 }
