@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail } from 'lucide-react';
 import './Footer.css';
 
-import logoImg from '../assets/new-logo.png';
+import logoImg from '../assets/georgos-logo1.png';
 
 const Footer = () => {
   return (
