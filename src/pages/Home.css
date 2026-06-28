@@ -75,7 +75,7 @@
   padding-bottom: 60px;
 }
 
-/* Vintage Background */
+/* Vintage Background Container */
 .hero-bg {
   position: absolute;
   top: 0;
@@ -83,21 +83,23 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  background: url('../assets/pala-church-bg.jpg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center right;
-  background-attachment: scroll;
+  overflow: hidden;
+  pointer-events: none;
 }
 
-/* Very subtle gradient on the left to ensure text readability if needed */
-.hero-bg::before {
-  content: '';
+/* Image with seamless mask */
+.hero-bg-img {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(253, 251, 247, 0.6) 0%, rgba(253, 251, 247, 0) 50%);
-  z-index: 1;
-  pointer-events: none;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: right center;
+  /* Fade the left edge perfectly */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%);
 }
 
 /* Hero Content aligned left */

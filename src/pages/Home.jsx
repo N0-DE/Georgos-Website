@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { CheckCircle2, XCircle, ShieldCheck, Heart, Store, ThumbsUp, Users, Award, MapPin } from 'lucide-react';
 import AnimatedCounter from '../components/AnimatedCounter';
 import logoImg from '../assets/georgos-logo.png';
+import bgImg from '../assets/pala-church-bg.jpg';
 import './Home.css';
 
 const Home = () => {
@@ -25,7 +26,9 @@ const Home = () => {
 
       {/* Hero Section */}
       <section className="hero">
-        <div className="hero-bg" />
+        <div className="hero-bg">
+          <img src={bgImg} className="hero-bg-img" alt="Pala Church Vintage Background" />
+        </div>
         <div className="container hero-content vintage-hero-content">
           <motion.img
             src={logoImg}
