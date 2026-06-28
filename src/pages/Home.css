@@ -70,7 +70,7 @@
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
-  background-color: var(--vintage-light, #FDFBF7);
+  background-color: #e6d2b5; /* Rich sepia brown to fill the rest */
   padding-top: 120px;
   padding-bottom: 60px;
 }
@@ -87,7 +87,7 @@
   pointer-events: none;
 }
 
-/* Image with seamless mask */
+/* Image with seamless mask and multiply blend */
 .hero-bg-img {
   position: absolute;
   top: 0;
@@ -97,6 +97,7 @@
   max-width: none;
   object-fit: contain;
   object-position: right center;
+  mix-blend-mode: multiply; /* Blends the sketch perfectly into the brown background */
   /* Fade the left edge perfectly */
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%);
   mask-image: linear-gradient(to right, transparent 0%, black 15%);
