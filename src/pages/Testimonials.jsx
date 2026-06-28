@@ -11,28 +11,28 @@ const Testimonials = () => {
     {
       id: 1,
       text: "Georgos Super Market has been our go-to for daily needs. The location opposite the Town Hall is incredibly convenient, and you can always count on finding fresh groceries and household items.",
-      author: "Local Resident",
+      author: "Joseph Kurian",
       role: "Customer Review",
       link: "https://share.google/v2hEw5vKA6ZygkfNe"
     },
     {
       id: 2,
       text: "The staff here is exceptionally courteous and always ready to help. It's rare to find such personalized service in a supermarket these days. Highly recommended!",
-      author: "Frequent Shopper",
+      author: "Sneha Thomas",
       role: "Customer Review",
       link: "https://share.google/OzUyK2uwcB4fGhC1i"
     },
     {
       id: 3,
       text: "A true Pala institution. They have been serving the community for decades with the same dedication to quality. Their prices are unbeatable for bulk purchases.",
-      author: "Local Business Owner",
+      author: "Mathew Varghese",
       role: "Customer Review",
       link: "https://share.google/OzUyK2uwcB4fGhC1i"
     },
     {
       id: 4,
       text: "Excellent place to shop. They have a very wide range of consumer goods under one roof, and they even offer prompt home delivery.",
-      author: "Verified Customer",
+      author: "Anju P.",
       role: "Customer Review",
       link: "https://share.google/v2hEw5vKA6ZygkfNe"
     }
