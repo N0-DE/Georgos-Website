@@ -5,6 +5,8 @@ import { CheckCircle2, XCircle, ShieldCheck, Heart, Store, ThumbsUp, Users, Awar
 import AnimatedCounter from '../components/AnimatedCounter';
 import logoImg from '../assets/georgos-logo.png';
 import bgImg from '../assets/pala-church-bg.jpg';
+import shopImg from '../assets/super-shop.jpg';
+import marketImg from '../assets/super-market.jpg';
 import './Home.css';
 
 const Home = () => {
@@ -114,7 +116,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <div className="store-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80')" }} />
+              <div className="store-image" style={{ backgroundImage: `url(${shopImg})` }} />
               <div className="store-content">
                 <span className="store-type">Wholesale & Retail</span>
                 <h3 className="store-title">Georgos Super Shop</h3>
@@ -141,7 +143,7 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="store-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&q=80')" }} />
+              <div className="store-image" style={{ backgroundImage: `url(${marketImg})` }} />
               <div className="store-content">
                 <span className="store-type">Retail Supermarket</span>
                 <h3 className="store-title">Georgos Super Market</h3>
