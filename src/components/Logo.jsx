@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import logoImg from '../assets/georgos-logo.png';
+import newLogoImg from '../assets/new-logo.png';
 
 const Logo = () => {
   return (
@@ -10,13 +10,11 @@ const Logo = () => {
       gap: '0.75rem',
       textDecoration: 'none'
     }}>
-      <img src={logoImg} alt="Georgos Logo" style={{
-        width: '44px',
-        height: '44px',
-        borderRadius: '8px',
+      <img src={newLogoImg} alt="Georgos Logo" style={{
+        height: '50px',
+        width: 'auto',
         objectFit: 'contain',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
-        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+        transition: 'transform 0.3s ease',
       }} />
       <div style={{ display: 'flex', flexDirection: 'column', lineHeight: '1' }}>
         <span style={{
@@ -28,16 +26,6 @@ const Logo = () => {
           lineHeight: '1.2'
         }}>
           Georgos
-        </span>
-        <span style={{
-          fontSize: '0.6rem',
-          fontWeight: '500',
-          color: 'var(--text-light)',
-          letterSpacing: '2px',
-          textTransform: 'uppercase',
-          marginTop: '2px'
-        }}>
-          Since 1963
         </span>
       </div>
     </Link>
