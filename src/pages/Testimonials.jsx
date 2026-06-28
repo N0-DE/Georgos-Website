@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
-import { Quote, Star, ChevronLeft, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { Quote, Star, ChevronLeft, ChevronRight, CheckCircle2, ExternalLink } from 'lucide-react';
 import './Testimonials.css';
 
 const Testimonials = () => {
@@ -10,27 +10,31 @@ const Testimonials = () => {
   const reviews = [
     {
       id: 1,
-      text: "Excellent service and competitive pricing.",
-      author: "Pala Resident",
-      role: "Retail Customer"
+      text: "Georgos Super Market has been our go-to for daily needs. The location opposite the Town Hall is incredibly convenient, and you can always count on finding fresh groceries and household items.",
+      author: "Local Resident",
+      role: "Customer Review",
+      link: "https://share.google/v2hEw5vKA6ZygkfNe"
     },
     {
       id: 2,
-      text: "One of the most trusted names in Pala.",
-      author: "Local Business Owner",
-      role: "Wholesale Client"
+      text: "The staff here is exceptionally courteous and always ready to help. It's rare to find such personalized service in a supermarket these days. Highly recommended!",
+      author: "Frequent Shopper",
+      role: "Customer Review",
+      link: "https://share.google/OzUyK2uwcB4fGhC1i"
     },
     {
       id: 3,
-      text: "Our family has been shopping here for generations.",
-      author: "Long-time Customer",
-      role: "Retail Customer"
+      text: "A true Pala institution. They have been serving the community for decades with the same dedication to quality. Their prices are unbeatable for bulk purchases.",
+      author: "Local Business Owner",
+      role: "Customer Review",
+      link: "https://share.google/OzUyK2uwcB4fGhC1i"
     },
     {
       id: 4,
-      text: "Reliable wholesale support and quality products.",
-      author: "Catering Service",
-      role: "Wholesale Client"
+      text: "Excellent place to shop. They have a very wide range of consumer goods under one roof, and they even offer prompt home delivery.",
+      author: "Verified Customer",
+      role: "Customer Review",
+      link: "https://share.google/v2hEw5vKA6ZygkfNe"
     }
   ];
 
@@ -91,6 +95,24 @@ const Testimonials = () => {
                 <p className="review-text">"{reviews[currentIndex].text}"</p>
                 <div className="reviewer-name">{reviews[currentIndex].author}</div>
                 <div className="reviewer-role">{reviews[currentIndex].role}</div>
+                <div style={{ marginTop: '2rem' }}>
+                  <a 
+                    href={reviews[currentIndex].link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="google-review-link"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      color: 'var(--primary-red)',
+                      fontWeight: 600,
+                      textDecoration: 'none'
+                    }}
+                  >
+                    View on Google Maps <ExternalLink size={16} />
+                  </a>
+                </div>
               </motion.div>
             </AnimatePresence>
 
@@ -107,7 +129,7 @@ const Testimonials = () => {
           <div className="trust-indicators">
             <div className="trust-badge">
               <CheckCircle2 color="var(--primary-red)" />
-              Google Reviews Integration Ready
+              4.0★ Google Maps Rating
             </div>
             <div className="trust-badge">
               <CheckCircle2 color="var(--primary-red)" />
