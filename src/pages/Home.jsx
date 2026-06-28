@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, XCircle, ShieldCheck, Heart, Store, ThumbsUp, Users, Award, MapPin } from 'lucide-react';
-import AnimatedCounter from '../components/AnimatedCounter';
 import logoImg from '../assets/georgos-logo.png';
 import bgImg from '../assets/pala-church-bg.jpg';
 import shopImg from '../assets/super-shop.jpg';
@@ -78,22 +77,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats Section (Moved out of hero to prevent overlapping the sketch) */}
-      <section className="section" style={{ backgroundColor: 'var(--vintage-light, #FDFBF7)', paddingTop: '2rem', paddingBottom: '4rem' }}>
-        <div className="container">
-          <motion.div 
-            className="stats-container"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-          >
-            <AnimatedCounter end={1963} duration={2} label="Founded In" />
-            <AnimatedCounter end={60} suffix="+" duration={2.5} label="Years of Trust" />
-            <AnimatedCounter end={2} duration={1.5} label="Store Locations" />
-            <AnimatedCounter end={10} suffix="k+" duration={3} label="Happy Customers" />
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* Our Stores Section */}
       <section id="stores" className="section">
