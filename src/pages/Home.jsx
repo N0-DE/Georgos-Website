@@ -26,17 +26,17 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-bg" />
-        <div className="container hero-content">
+        <div className="container hero-content vintage-hero-content">
           <motion.img
             src={logoImg}
             alt="Georgos Logo"
-            className="hero-logo-emboss"
+            className="hero-logo-vintage"
             initial={{ opacity: 0, scale: 0.85, y: 50, filter: 'blur(12px)' }}
             animate={{ opacity: 1, scale: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
           />
           <motion.h1 
-            className="hero-title"
+            className="hero-title vintage-text"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
@@ -44,7 +44,7 @@ const Home = () => {
             Serving Pala Since 1963
           </motion.h1>
           <motion.p 
-            className="hero-subtitle"
+            className="hero-subtitle vintage-sub"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -52,7 +52,7 @@ const Home = () => {
             From a humble bicycle rental shop to one of Pala's most trusted wholesale and retail brands.
           </motion.p>
           <motion.p 
-            className="hero-text"
+            className="hero-text vintage-desc"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
@@ -66,7 +66,7 @@ const Home = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           >
             <a href="#stores" className="btn btn-primary">Explore Our Stores</a>
-            <Link to="/about" className="btn btn-outline" style={{ color: 'white', borderColor: 'white' }}>
+            <Link to="/about" className="btn btn-outline vintage-btn-outline">
               Our Story
             </Link>
           </motion.div>
