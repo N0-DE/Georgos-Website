@@ -77,16 +77,16 @@ const Contact = () => {
                     <MapPin className="info-icon" size={20} />
                     <div>
                       <h4 style={{ fontWeight: 600 }}>Georgos Super Shop</h4>
-                      <p style={{ color: 'var(--text-light)', fontSize: '0.875rem' }}>Pala, Kerala</p>
-                      <a href="https://maps.app.goo.gl/gBPX5W6F1SKw4tbY7" target="_blank" rel="noreferrer" style={{ fontSize: '0.875rem', color: 'var(--primary-red)', fontWeight: 500, marginTop: '0.25rem', display: 'inline-block' }}>Get Directions</a>
+                      <p style={{ color: 'var(--text-light)', fontSize: '0.875rem' }}>Ramapuram Rd, Opp. Town Hall, Pala</p>
+                      <a href="https://share.google/OzUyK2uwcB4fGhC1i" target="_blank" rel="noreferrer" style={{ fontSize: '0.875rem', color: 'var(--primary-red)', fontWeight: 500, marginTop: '0.25rem', display: 'inline-block' }}>Get Directions</a>
                     </div>
                   </div>
                   <div className="info-item">
                     <MapPin className="info-icon" size={20} />
                     <div>
                       <h4 style={{ fontWeight: 600 }}>Georgos Super Market</h4>
-                      <p style={{ color: 'var(--text-light)', fontSize: '0.875rem' }}>Pala, Kerala</p>
-                      <a href="https://share.google/HDSysJLTeJysoYMUU" target="_blank" rel="noreferrer" style={{ fontSize: '0.875rem', color: 'var(--primary-red)', fontWeight: 500, marginTop: '0.25rem', display: 'inline-block' }}>Get Directions</a>
+                      <p style={{ color: 'var(--text-light)', fontSize: '0.875rem' }}>Pala Town, Kottayam, Kerala</p>
+                      <a href="https://share.google/v2hEw5vKA6ZygkfNe" target="_blank" rel="noreferrer" style={{ fontSize: '0.875rem', color: 'var(--primary-red)', fontWeight: 500, marginTop: '0.25rem', display: 'inline-block' }}>Get Directions</a>
                     </div>
                   </div>
                 </div>
@@ -202,7 +202,7 @@ const Contact = () => {
               <div className="map-container">
                 <iframe 
                   title="Super Shop Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15730.822839446067!2d76.67139121683344!3d9.704253303648416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cbaf68ed4425%3A0x6b44dd94df5e55cd!2sPala%2C%20Kerala!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" 
+                  src="https://maps.google.com/maps?q=Georgos%20Super%20Shop%20Pala&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                   allowFullScreen="" 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
@@ -214,7 +214,7 @@ const Contact = () => {
               <div className="map-container">
                 <iframe 
                   title="Super Market Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15730.822839446067!2d76.67139121683344!3d9.704253303648416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cbaf68ed4425%3A0x6b44dd94df5e55cd!2sPala%2C%20Kerala!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin" 
+                  src="https://maps.google.com/maps?q=Georgos%20Super%20Market%20Pala&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                   allowFullScreen="" 
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
